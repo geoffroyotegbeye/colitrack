@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: colitrack
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: colitrack
+      POSTGRES_USER: colitrack
+      POSTGRES_PASSWORD: colitrack
+    ports:
+      - "5438:5432"
+    volumes:
+      - colitrack_pg_data:/var/lib/postgresql/data
+
+volumes:
+  colitrack_pg_data:

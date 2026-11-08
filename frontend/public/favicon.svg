@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Fond arrondi -->
+  <rect width="64" height="64" rx="14" fill="#1e3a5f"/>
+
+  <!-- Colis (boîte) -->
+  <rect x="12" y="26" width="30" height="24" rx="3" fill="#f59e0b" stroke="#fbbf24" stroke-width="1.5"/>
+  <!-- Ruban horizontal du colis -->
+  <line x1="12" y1="38" x2="42" y2="38" stroke="#1e3a5f" stroke-width="2.5"/>
+  <!-- Ruban vertical du colis -->
+  <line x1="27" y1="26" x2="27" y2="50" stroke="#1e3a5f" stroke-width="2.5"/>
+
+  <!-- Flèche de tracking (haut droite) -->
+  <circle cx="48" cy="18" r="10" fill="#10b981"/>
+  <polyline points="43,18 48,13 53,18" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="48" y1="13" x2="48" y2="23" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

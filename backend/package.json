@@ -1,0 +1,31 @@
+{
+  "name": "colitrack-backend",
+  "version": "1.0.0",
+  "description": "Backend Node.js + PostgreSQL pour ColiTrack",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "node --test test/*.test.js",
+    "db:init": "node src/scripts/init-db.js",
+    "db:seed": "node src/scripts/seed.js",
+    "admin:create": "node src/scripts/create-admin.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.2.0",
+    "pg": "^8.20.0",
+    "uuid": "^9.0.1",
+    "ws": "^8.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

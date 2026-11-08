@@ -1,0 +1,25 @@
+# Déploiement Render — une seule origine (le backend sert le frontend compilé).
+# 1 service web gratuit pour frontend + backend. Base PostgreSQL : Neon (hors Render).
+services:
+  - type: web
+    name: colitrack
+    runtime: node
+    region: ohio            # proche de la base Neon (AWS us-east-2 / Ohio)
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SERVE_FRONTEND   # le backend sert frontend/dist
+        value: "1"
+      - key: JWT_SECRET       # généré automatiquement, jamais affiché
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: PGSSL            # Neon exige SSL
+        value: require
+      - key: DATABASE_URL     # à coller : connection string Neon
+        sync: false
